@@ -29,54 +29,61 @@
         <h6 class="text-center">{{ successMessage }}</h6>
       </div>
 
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="obj.name"
-          placeholder="Enter Name"
-          (input)="clearErrorMessage('Name is required')"
-        />
-        <div
-          *ngIf="errorMessage === 'Name is required' && !obj.name"
-          class="error-message text-danger"
-        >
-          {{ errorMessage }}
+      <div class="row">
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="obj.name"
+              placeholder="Enter Name"
+              (input)="clearErrorMessage('Name is required')"
+            />
+            <div
+              *ngIf="errorMessage === 'Name is required' && !obj.name"
+              class="error-message text-danger"
+            >
+              {{ errorMessage }}
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone</label>
-        <input
-          type="phone"
-          class="form-control"
-          [(ngModel)]="obj.phone"
-          placeholder="Enter Phone"
-          (input)="clearErrorMessage('Phone is required')"
-        />
-        <div
-          *ngIf="errorMessage === 'Phone is required' && !obj.phone"
-          class="error-message text-danger"
-        >
-          {{ errorMessage }}
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              type="phone"
+              class="form-control"
+              [(ngModel)]="obj.phone"
+              placeholder="Enter Phone"
+              (input)="clearErrorMessage('Phone is required')"
+            />
+            <div
+              *ngIf="errorMessage === 'Phone is required' && !obj.phone"
+              class="error-message text-danger"
+            >
+              {{ errorMessage }}
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <label for="address" class="form-label">Address</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="obj.address"
-          placeholder="Enter Address"
-          (input)="clearErrorMessage('Address is required')"
-        />
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="obj.address"
+              placeholder="Enter Address"
+              (input)="clearErrorMessage('Address is required')"
+            />
 
-        <div
-          *ngIf="errorMessage === 'Address is required' && !obj.address"
-          class="error-message text-danger"
-        >
-          {{ errorMessage }}
+            <div
+              *ngIf="errorMessage === 'Address is required' && !obj.address"
+              class="error-message text-danger"
+            >
+              {{ errorMessage }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -90,7 +97,6 @@
         <th>Phone</th>
         <th>Address</th>
         <th>Actions</th>
-        <!-- Added a new column for actions -->
       </tr>
     </thead>
     <tbody *ngIf="userList && userList.length > 0; else noRecords">
